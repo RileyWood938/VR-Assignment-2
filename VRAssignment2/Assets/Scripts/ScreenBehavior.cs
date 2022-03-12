@@ -18,9 +18,11 @@ public class ScreenBehavior : MonoBehaviour
     public Material purple;
     public Material[] colors;
     public Material colorOfProblem;
+    public bool changed = false;
     // Start is called before the first frame update
     void Start()
     {
+        
         countingGracePeriod = true;
         colors = new Material[] { red, orange, yellow, green, blue, purple };
     }
@@ -39,12 +41,25 @@ public class ScreenBehavior : MonoBehaviour
     {
         colorOfProblem = colors[Random.Range(0, 6)];
         GetComponent<Renderer>().material = colorOfProblem;
+        changed = true;
     }
 
     public void SolvePredicament()
     {
         GetComponent<Renderer>().material = normal;
+        changed = false;
     }
+
+    public bool isChanged()
+    {
+        return changed;
+    }
+
+    public Material fetchColor()
+    {
+        return colorOfProblem;
+    }
+
     public void StartTrial()
     {
 

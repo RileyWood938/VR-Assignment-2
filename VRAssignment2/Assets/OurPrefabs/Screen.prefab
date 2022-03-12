@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4627151035958525605}
   m_Layer: 0
   m_Name: Screen
-  m_TagString: Untagged
+  m_TagString: Screen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,3 +115,4 @@ MonoBehaviour:
   purple: {fileID: 2100000, guid: e47873cb5464adb4b98ddac91e7d1de9, type: 2}
   colors: []
   colorOfProblem: {fileID: 0}
+  changed: 0
