@@ -24,11 +24,15 @@ public class ButtonScript : MonoBehaviour
         GetComponent<Renderer>().material = normal;
         changed = false;
     }
-
+    public bool isChanged()
+    {
+        return changed;
+    }
     public void changeColor(Material m)
     {
         changedColor = m;
         GetComponent<Renderer>().material = changedColor;
+        changed = true;
 
     }
 }
