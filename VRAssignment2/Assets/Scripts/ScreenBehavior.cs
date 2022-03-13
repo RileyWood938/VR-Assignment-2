@@ -51,6 +51,7 @@ public class ScreenBehavior : MonoBehaviour
     {
         GetComponent<Renderer>().material = normal;
         changed = false;
+        countingGracePeriod = true;
     }
 
     public bool isChanged()

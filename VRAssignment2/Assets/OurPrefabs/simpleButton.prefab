@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0098bb189d88f6f44b54ed2393bd3e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normal: {fileID: 0}
+  normal: {fileID: 2100000, guid: d107c7323c10cbc4895dd356b2b12c7f, type: 2}
   changedColor: {fileID: 0}
   changed: 0
+  maximumAngleForEvent: 30
+  gameControl: {fileID: 0}

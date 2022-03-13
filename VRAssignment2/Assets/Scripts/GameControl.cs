@@ -8,6 +8,7 @@ public class GameControl : MonoBehaviour
     public GameObject[] buttons;
     public bool buttonSelection = false;
     public GameObject TentativeButton;
+    public Material comparedColor;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,18 @@ public class GameControl : MonoBehaviour
         }
     }
 
-
+    public void checkButton(GameObject button)
+    {
+        for (int i = 0; i < screens.Length; i++)
+        {
+            if(screens[i].GetComponent<ScreenBehavior>().fetchColor() == button.GetComponent<ButtonScript>().fetchColor())
+            {
+                screens[i].GetComponent<ScreenBehavior>().SolvePredicament();
+                button.GetComponent<ButtonScript>().switchColorToNormal();
+                break;
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
