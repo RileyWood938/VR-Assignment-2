@@ -90,7 +90,7 @@ Transform:
   m_Children:
   - {fileID: 923846892358874275}
   m_Father: {fileID: 5766452821879211857}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5716253094218217696
 GameObject:
@@ -135,9 +135,10 @@ GameObject:
   - component: {fileID: 6308477889156496242}
   - component: {fileID: 6308477889156496245}
   - component: {fileID: 6308477889156496244}
+  - component: {fileID: 3074201932693152477}
   m_Layer: 0
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,8 +154,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 2.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3221862745968416719}
   - {fileID: 844005730243754635}
+  - {fileID: 3221862745968416719}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -189,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d459a17ffe9af81448f9199f82a40a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumAngleForEvent: 30
+  maximumAngleForEvent: 15
   OnHoverBegin:
     m_PersistentCalls:
       m_Calls:
@@ -235,6 +236,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3074201932693152477}
+        m_MethodName: ButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6308477889156496244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +259,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b581c64b127ea844088f76e985d7dc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3074201932693152477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579018974818246123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0098bb189d88f6f44b54ed2393bd3e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 2100000, guid: d107c7323c10cbc4895dd356b2b12c7f, type: 2}
+  changedColor: {fileID: 0}
+  changed: 0
+  maximumAngleForEvent: 15
+  gameControl: {fileID: 0}
 --- !u!1 &7292766705558662842
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,11 +301,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7292766705558662842}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 5766452821879211857}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1288167133857475868
 SkinnedMeshRenderer:
@@ -296,7 +325,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8039567086963658369, guid: eaaca38e917cb714297d4b73898fa4b7, type: 3}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

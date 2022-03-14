@@ -5,7 +5,8 @@ using UnityEngine;
 public class ButtonPressAnimation : MonoBehaviour
 {
     new Animator animator;
-    new bool lookedAt = false;
+    new float TimeSincePlayback =0;
+    new bool playbackStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,25 +17,22 @@ public class ButtonPressAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("e") && lookedAt)
+        if (playbackStarted = true)
         {
-            animator.SetBool("Pressed", true);
+            TimeSincePlayback += Time.deltaTime;
+            if (TimeSincePlayback > .54)
+            {
+                animator.SetBool("Pressed", false);
+                playbackStarted = false;
+           }
         }
-        else
-        {
-            animator.SetBool("Pressed", false);
-        }
+       
+       
     }
     public void pressed()
     {
         animator.SetBool("Pressed", true);
-    }
-    public void GazeOver()
-    {
-        lookedAt = true;
-    }
-    public void GazeEnd()
-    {
-        lookedAt = false;
+        playbackStarted = true;
+        TimeSincePlayback = 0;
     }
 }

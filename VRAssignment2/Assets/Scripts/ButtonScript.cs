@@ -10,6 +10,7 @@ public class ButtonScript : MonoBehaviour
     [Range(0, 360)]
     public float maximumAngleForEvent = 15f;
     public GameControl gameControl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class ButtonScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   /* void Update()
     {
         var cameraForward = Camera.main.transform.forward;
         var vectorToObject = transform.position - Camera.main.transform.position;
@@ -33,7 +34,7 @@ public class ButtonScript : MonoBehaviour
                 ButtonPressed();
             }
         }
-    }
+    }*/
     public void ButtonPressed()
     {
         if (changed)
@@ -44,7 +45,7 @@ public class ButtonScript : MonoBehaviour
     }
     public void switchColorToNormal()
     {
-        GetComponent<Renderer>().material = normal;
+        transform.Find("Cylinder").GetComponent<SkinnedMeshRenderer>().material = normal;
         changed = false;
     }
     public bool isChanged()
@@ -54,7 +55,7 @@ public class ButtonScript : MonoBehaviour
     public void changeColor(Material m)
     {
         changedColor = m;
-        GetComponent<Renderer>().material = changedColor;
+        transform.Find("Cylinder").GetComponent<SkinnedMeshRenderer>().material = changedColor;
         changed = true;
 
     }
