@@ -13,6 +13,11 @@ public class GameControl : MonoBehaviour
     public GameObject TentativeButton;
     public Material comparedColor;
     public bool level2;
+    private float timer = 0;
+    public Text text;
+    private bool tutoraialDone = false;
+    private bool levelTwoDisplayDone = false;
+    private bool levelTwoDisplayStart = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +90,37 @@ public class GameControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        updateUi();
+    }
+    private void updateUi()
+    {
+        if (!tutoraialDone)
+        {
+            if (timer > 4)
+            {
+                text.text = " ";
+                tutoraialDone = true;
+            }else if(timer>2.5) {
+                text.text = "Press the button of the same color to score points";
+            }else if(timer>.75) {
+                text.text = "These moniters will light up with a matching button";
+            }
+        }
+        if (tutoraialDone && !levelTwoDisplayDone)
+        {
+            if (level2 && !levelTwoDisplayStart)
+            {
+                timer = 0;
+                text.text = "Level Two!";
+                levelTwoDisplayStart = true;
+            }
+            if(levelTwoDisplayStart && timer > 2)
+            {
+                text.text = "";
+                levelTwoDisplayDone = true;
+            }
+
+        }
     }
 }
