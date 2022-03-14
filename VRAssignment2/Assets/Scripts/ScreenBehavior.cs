@@ -20,6 +20,7 @@ public class ScreenBehavior : MonoBehaviour
     public Material colorOfProblem;
     public bool changed = false;
     public GameControl gameControl;
+    public bool sleep = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,9 +50,11 @@ public class ScreenBehavior : MonoBehaviour
 
     public void SolvePredicament()
     {
+        
         GetComponent<Renderer>().material = normal;
         changed = false;
         countingGracePeriod = true;
+        colorOfProblem = normal;
     }
 
     public bool isChanged()
@@ -64,14 +67,18 @@ public class ScreenBehavior : MonoBehaviour
         return colorOfProblem;
     }
 
-    public void StartTrial()
+    public void Awake()
     {
-
+        sleep = false;
+    }
+    public void Slumber()
+    {
+        sleep = true;
     }
     // Update is called once per frame
     void Update()
     {
-        if (countingGracePeriod)
+        if (countingGracePeriod && !sleep)
         {
 
             GracePeriod -= Time.deltaTime;
