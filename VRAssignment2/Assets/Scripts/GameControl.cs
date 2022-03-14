@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
+    private int score = 0;
+    public Text scoreTracker;
     public GameObject[] screens;
     public GameObject[] buttons;
     public bool buttonSelection = false;
@@ -12,6 +15,7 @@ public class GameControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreTracker.text = "Score: " + score.ToString();
         //screens = new GameObject[];
         screens = GameObject.FindGameObjectsWithTag("Screen");
         buttons = GameObject.FindGameObjectsWithTag("Button");
@@ -45,6 +49,8 @@ public class GameControl : MonoBehaviour
             {
                 screens[i].GetComponent<ScreenBehavior>().SolvePredicament();
                 button.GetComponent<ButtonScript>().switchColorToNormal();
+                score += 10;
+                scoreTracker.text = "Score: " + score.ToString();
                 break;
             }
         }
