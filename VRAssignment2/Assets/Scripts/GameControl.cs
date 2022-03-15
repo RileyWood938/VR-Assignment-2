@@ -7,6 +7,7 @@ public class GameControl : MonoBehaviour
 {
     private int score = 0;
     public Text scoreTracker;
+    public Text timeTracker;
     public GameObject[] screens;
     public GameObject[] buttons;
     public bool buttonSelection = false;
@@ -18,6 +19,9 @@ public class GameControl : MonoBehaviour
     private bool tutoraialDone = false;
     private bool levelTwoDisplayDone = false;
     private bool levelTwoDisplayStart = false;
+    public bool gameOver = false;
+    public float timeCount = 180.0f;
+    public bool quitTest = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +96,16 @@ public class GameControl : MonoBehaviour
     {
         timer += Time.deltaTime;
         updateUi();
+        timeCount -= Time.deltaTime;
+        if(timeCount <= 0)
+        {
+            gameOver = true;
+        }
+        if(timeCount <= 175f && quitTest)
+        {
+            gameOver = true;
+        }
+        
     }
     private void updateUi()
     {
@@ -119,6 +133,21 @@ public class GameControl : MonoBehaviour
             {
                 text.text = "";
                 levelTwoDisplayDone = true;
+            }
+
+        }
+        timeTracker.text = "Time remaining: 0" + Mathf.Floor((timeCount / 60)).ToString() + ":" + Mathf.Floor((timeCount % 60)).ToString();
+        
+    }
+    void OnGUI()
+    {
+        if (gameOver)
+        {
+            Time.timeScale = 0f;
+            
+            if (XRInputManager.IsButtonDown() || GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 100), "Game cleared. Totoal score: " + score.ToString()))
+            {
+                Application.Quit();
             }
 
         }

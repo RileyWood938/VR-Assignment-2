@@ -33,6 +33,7 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Level1.unity:
@@ -62,6 +63,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 91
@@ -76,6 +81,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11352}
     - Class: 114
       Script: {instanceID: 11576}
+    - Class: 114
+      Script: {instanceID: 11626}
     - Class: 114
       Script: {instanceID: 12062}
     - Class: 114
@@ -337,7 +344,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 66a4260640829b3d1058622efcece018
+      Hash: 53191427f5e07ea053551efda622141a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ScreenBehavior
@@ -415,7 +422,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 6899c4f9a16f810e703edcd90c1e434d
+      Hash: 7131fdcd61d4e87b4649cdc4575e6b4e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameControl
@@ -650,4 +657,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Level1.unity
-  playerPath: C:/Users/night/Documents/GitHub/VR-Assignment-2/VRAssignment2/test1.apk
+  playerPath: C:/Shkolnik/ISP Unity Book with Code/Screens/test.apk
