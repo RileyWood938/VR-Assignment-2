@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class ButtonPressAnimation : MonoBehaviour
 {
-    new Animator animator;
-    new float TimeSincePlayback =0;
+    /// <summary>
+    /// this script animates the buttons. It's called by the gaze over event
+    /// </summary>
+    
+  
+    //The method I used has a state machine which switches on press and switches back after the animation is complete.
+    // It seems like there should be a more effeciaent approach but nothing else semmed to work
+
+    new Animator animator; //find the animator
+    new float TimeSincePlayback =0; //timer to control how long the animation plays for
     new bool playbackStarted = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// when the playback of the animation begins, the timer begins counting. after then animation is complete (.54) it switches back to the idle state
+    /// </summary>
     void Update()
     {
-        if (playbackStarted = true)
+        if (playbackStarted = true) 
         {
             TimeSincePlayback += Time.deltaTime;
             if (TimeSincePlayback > .54)
@@ -29,6 +38,10 @@ public class ButtonPressAnimation : MonoBehaviour
        
        
     }
+
+    /// <summary>
+    /// this begins the animation by activating the state machine. It is triggered by a unity event
+    /// </summary>
     public void pressed()
     {
         animator.SetBool("Pressed", true);

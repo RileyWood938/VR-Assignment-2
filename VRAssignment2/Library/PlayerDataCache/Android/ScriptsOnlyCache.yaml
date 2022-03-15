@@ -78,31 +78,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11352}
+      Script: {instanceID: 11350}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11574}
     - Class: 114
-      Script: {instanceID: 11626}
+      Script: {instanceID: 11624}
     - Class: 114
-      Script: {instanceID: 12062}
+      Script: {instanceID: 12060}
     - Class: 114
-      Script: {instanceID: 12162}
+      Script: {instanceID: 12160}
     - Class: 114
-      Script: {instanceID: 12442}
+      Script: {instanceID: 12440}
     - Class: 114
-      Script: {instanceID: 12654}
+      Script: {instanceID: 12652}
     - Class: 114
-      Script: {instanceID: 13002}
+      Script: {instanceID: 13000}
     - Class: 114
-      Script: {instanceID: 13132}
+      Script: {instanceID: 13130}
     - Class: 114
-      Script: {instanceID: 13284}
+      Script: {instanceID: 13282}
     - Class: 114
-      Script: {instanceID: 13478}
+      Script: {instanceID: 13476}
     - Class: 114
-      Script: {instanceID: 13986}
+      Script: {instanceID: 13984}
     - Class: 114
-      Script: {instanceID: 14014}
+      Script: {instanceID: 14012}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -657,4 +657,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Level1.unity
-  playerPath: C:/Shkolnik/ISP Unity Book with Code/Screens/test.apk
+  playerPath: C:/Users/night/Documents/GitHub/VR-Assignment-2/VRAssignment2/Build1.apk

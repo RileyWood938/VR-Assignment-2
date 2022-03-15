@@ -14,11 +14,16 @@ public class GameControl : MonoBehaviour
     public GameObject TentativeButton;
     public Material comparedColor;
     public bool level2;
-    private float timer = 0;
+
+    /// <summary>
+    /// these variables used for the UI text display
+    /// </summary>
+    private float timer = 0; 
     public Text text;
     private bool tutoraialDone = false;
     private bool levelTwoDisplayDone = false;
     private bool levelTwoDisplayStart = false;
+
     public bool gameOver = false;
     public float timeCount = 180.0f;
     public bool quitTest = false;
@@ -78,7 +83,7 @@ public class GameControl : MonoBehaviour
                 screens[i].GetComponent<ScreenBehavior>().SolvePredicament();
                 button.GetComponent<ButtonScript>().switchColorToNormal();
                 score += 10;
-                if (score >= 100 && !level2)
+                if (score >= 200 && !level2)
                 {
                     level2 = true;
                     foreach (GameObject screen in screens)
@@ -107,14 +112,17 @@ public class GameControl : MonoBehaviour
         }
         
     }
+    ///<summary>
+    ///this method updates the UI, loading the tutorial scripts, hiding them after 2 seconds, and loading the "level two" text once we hit level two - riley
+    ///</summary>
     private void updateUi()
     {
-        if (!tutoraialDone)
+        if (!tutoraialDone)//check to make sure the tutorial hasn't already been completed
         {
             if (timer > 4)
             {
                 text.text = " ";
-                tutoraialDone = true;
+                tutoraialDone = true;//mark the tutorial complete
             }else if(timer>2.5) {
                 text.text = "Press the button of the same color to score points";
             }else if(timer>.75) {
@@ -125,7 +133,7 @@ public class GameControl : MonoBehaviour
         {
             if (level2 && !levelTwoDisplayStart)
             {
-                timer = 0;
+                timer = 0;//on level two start reset the timer so the message only displays for 2 seconds
                 text.text = "Level Two!";
                 levelTwoDisplayStart = true;
             }
